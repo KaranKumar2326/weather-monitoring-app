@@ -1,0 +1,32 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"  # Maps the container's port 5000 to the host's port 5000
+    env_file:
+      - .env  # Load environment variables for backend
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb://mongo:27017/weatherDB  # Connect backend to MongoDB container
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"  # Maps the container's port 3000 to the host's port 3000
+    environment:
+      REACT_APP_API_BASE_URL: http://backend:5000/api  # Connect frontend to backend service on Docker’s internal network
+
+  mongo:
+    image: mongo  # Use official MongoDB image
+    ports:
+      - "27017:27017"  # Maps MongoDB's port 27017 to the host's port 27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongo-data:/data/db  # Persist MongoDB data
+
+volumes:
+  mongo-data:
