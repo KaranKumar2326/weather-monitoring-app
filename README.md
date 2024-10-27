@@ -57,11 +57,7 @@ cd weather-monitoring-app
    npm run dev
    ```
 
-   For production:
-
-   ```bash
-   npm start
-   ```
+  
 
 ### 3. Set Up Frontend
 
