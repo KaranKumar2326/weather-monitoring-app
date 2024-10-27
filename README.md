@@ -1,4 +1,3 @@
-Here's a concise and comprehensive `README.md` file that includes installation steps, environment setup, and usage instructions for both the frontend and backend of your weather monitoring application.
 
 ```markdown
 # Weather Monitoring Application
