@@ -1,0 +1,27 @@
+.alerts-container {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .alert-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .alert-card {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .alert-card h3 {
+    margin-top: 0;
+    color: #856404;
+  }
+  
